@@ -1,0 +1,2368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hielito Spring Ice</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="fotos/logo.png" alt="">
+                    <span>Hielito Spring Ice</span>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#productos" class="nav-link">Productos</a></li>
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    <li><a href="#" class="nav-link cta-nav">Cotizar</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="hero-background">
+                <div class="hero-particles"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line">Soluciones Integrales</span>
+                        <span class="title-line">en Refrigeración Industrial</span>
+                    </h1>
+                    <p class="hero-subtitle">Proveedor líder de hielo de grado alimentario con certificaciones internacionales ISO 22000 y HACCP</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-count="7">0</span>
+                            <span class="stat-label">Años de experiencia</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="1000">0</span>
+                            <span class="stat-label">Clientes</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="24">0</span>
+                            <span class="stat-label">Horas de servicio</span>
+                        </div>
+                    </div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".stat-number");
+
+    const runCounter = (counter) => {
+        let target = +counter.getAttribute("data-count");
+        let count = 0;
+        const duration = 2000; // 2s
+        const stepTime = 30;
+        const steps = duration / stepTime;
+        const increment = target / steps;
+
+        const updateCount = () => {
+            if (count < target) {
+                count += increment;
+                if (count >= target) count = target;
+                counter.textContent = Math.floor(count);
+                setTimeout(updateCount, stepTime);
+            } else {
+                // al terminar, formateamos
+                if (target >= 1000) {
+                    counter.textContent = "+1k";
+                } else {
+                    counter.textContent = target;
+                }
+            }
+        };
+
+        updateCount();
+    };
+
+    // 🚀 Se dispara cuando la sección aparece en pantalla
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                runCounter(entry.target);
+                obs.unobserve(entry.target); // solo una vez
+            }
+        });
+    }, { threshold: 0.6 });
+
+    counters.forEach(counter => observer.observe(counter));
+});
+</script>
+
+
+
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" id="cotizarBtn">
+                            <i class="fas fa-calculator"></i>
+                            Solicitar Cotización
+                        </button>
+                        <button class="btn btn-secondary" id="verCatalogoBtn">
+                            <i class="fas fa-book"></i>
+                            Ver Catálogo
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="temperature-display">
+                        <div class="temp-reading">
+                            <span class="temp-value" id="tempValue">-96</span>°C
+                        </div>
+                        <div class="temp-label">Temperatura óptima</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="productos" class="products">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Línea de Productos Profesionales</h2>
+                    <p class="section-subtitle">Soluciones especializadas para cada industria</p>
+                </div>
+
+                <div class="products-grid" id="productsGrid">
+                    <div class="product-card" data-category="industrial">
+                        <div class="product-image">
+                            <div class="product-badge">Premium</div>
+                            <div class="product-icon"><img src="fotos/1kg.jpg" alt=""></div>
+                        </div>
+                        <div class="product-content">
+                            <h3>Hielo en bloque</h3>
+                            <p>- Paquete de hielo 1kg - S/1.50</p>
+                            <div class="product-specs">
+                                <span><i class="fas fa-thermometer-half"></i> -90°C constante</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price-from">Desde</span>
+                                <span class="price">S/. 1.50</span>
+                                <span class="price-unit">/Kg</span>
+                            </div>
+                            <button class="btn btn-outline cotizar-producto" data-producto="Hielo Industrial">
+                                <i class="fas fa-shopping-cart"></i>
+                                Cotizar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!--2-->
+                    <div class="product-card" data-category="industrial">
+                        <div class="product-image">
+                            <div class="product-badge">Premium</div>
+                            <div class="product-icon"><img src="fotos/2kg.jpg" alt=""></div>
+                        </div>
+                        <div class="product-content">
+                            <h3>Hielo en bloque</h3>
+                            <p>- Paquete de hielo 2kg - S/2.50</p>
+                            <div class="product-specs">
+                                <span><i class="fas fa-thermometer-half"></i> -90°C constante</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price-from">Desde</span>
+                                <span class="price">S/. 2.50</span>
+                                <span class="price-unit">/Kg</span>
+                            </div>
+                            <button class="btn btn-outline cotizar-producto" data-producto="Hielo Industrial">
+                                <i class="fas fa-shopping-cart"></i>
+                                Cotizar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!--3-->
+                    <div class="product-card" data-category="industrial">
+                        <div class="product-image">
+                            <div class="product-badge">Premium</div>
+                            <div class="product-icon"><i class="fas fa-cubes"></i></div>
+                        </div>
+                        <div class="product-content">
+                            <h3>Hielo en bloque</h3>
+                            <p>- Paquete de hielo 5kg - S/5.00</p>
+                            <div class="product-specs">
+                                <span><i class="fas fa-thermometer-half"></i> -90°C constante</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price-from">Desde</span>
+                                <span class="price">S/. 5.00</span>
+                                <span class="price-unit">/Kg</span>
+                            </div>
+                            <button class="btn btn-outline cotizar-producto" data-producto="Hielo Industrial">
+                                <i class="fas fa-shopping-cart"></i>
+                                Cotizar
+                            </button>
+                        </div>
+                    </div>
+                    <!--4-->
+                    <div class="product-card" data-category="industrial">
+                        <div class="product-image">
+                            <div class="product-badge">Premium</div>
+                            <div class="product-icon"><i class="fas fa-cubes"></i></div>
+                        </div>
+                        <div class="product-content">
+                            <h3>Hielo Gourmet</h3>
+                            <p>- Paquete de hielo Gourmet 5kg - S/6.50</p>
+                            <div class="product-specs">
+                                <span><i class="fas fa-thermometer-half"></i> -90°C constante</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price-from">Desde</span>
+                                <span class="price">S/. 6.50</span>
+                                <span class="price-unit">/Kg</span>
+                            </div>
+                            <button class="btn btn-outline cotizar-producto" data-producto="Hielo Industrial">
+                                <i class="fas fa-shopping-cart"></i>
+                                Cotizar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicios" class="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Servicios Profesionales</h2>
+                    <p class="section-subtitle">Soluciones integrales para su negocio</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-truck-fast"></i>
+                        </div>
+                        <h3>Distribución Especializada</h3>
+                        <p>Flota refrigerada con GPS y monitoreo de temperatura en tiempo real. Entrega garantizada en 2 horas.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Vehículos isotérmicos</li>
+                            <li><i class="fas fa-check"></i> Tracking GPS</li>
+                            <li><i class="fas fa-check"></i> Monitoreo de temperatura</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Contratos Corporativos</h3>
+                        <p>Planes personalizados para empresas con descuentos progresivos y facturación mensual.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Precios preferenciales</li>
+                            <li><i class="fas fa-check"></i> Facturación corporativa</li>
+                            <li><i class="fas fa-check"></i> Ejecutivo dedicado</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Consultoría en Refrigeración</h3>
+                        <p>Asesoramiento técnico especializado en sistemas de conservación y eficiencia energética.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Auditorías energéticas</li>
+                            <li><i class="fas fa-check"></i> Optimización de procesos</li>
+                            <li><i class="fas fa-check"></i> Capacitación técnica</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="nosotros" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>15 Años Liderando el Mercado</h2>
+                        <p class="about-intro">CryoIce Solutions es la empresa líder en distribución de hielo industrial en el norte del Perú, con presencia en 8 departamentos y más de 500 clientes corporativos.</p>
+                        
+                        <div class="certifications">
+                            <h3>Certificaciones y Garantías</h3>
+                            <div class="cert-grid">
+                                <div class="cert-item">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>ISO 22000:2018</span>
+                                </div>
+                                <div class="cert-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>HACCP</span>
+                                </div>
+                                <div class="cert-item">
+                                    <i class="fas fa-leaf"></i>
+                                    <span>Eco-Friendly</span>
+                                </div>
+                                <div class="cert-item">
+                                    <i class="fas fa-award"></i>
+                                    <span>DIGESA</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="company-stats">
+                            <div class="company-stat">
+                                <i class="fas fa-industry"></i>
+                                <div>
+                                    <span class="stat-number">3</span>
+                                    <span class="stat-label">Plantas de producción</span>
+                                </div>
+                            </div>
+                            <div class="company-stat">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <span class="stat-number">120</span>
+                                    <span class="stat-label">Colaboradores</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-visual">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year">2009</div>
+                                <div class="timeline-content">Fundación en Piura</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2015</div>
+                                <div class="timeline-content">Certificación ISO 22000</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2020</div>
+                                <div class="timeline-content">Expansión regional</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2024</div>
+                                <div class="timeline-content">Líder del mercado</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contacto" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Contacto Profesional</h2>
+                    <p class="section-subtitle">Estamos aquí para atender sus necesidades empresariales</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h3>Oficina Principal</h3>
+                            <p>Av. Industria 1250, Parque Industrial<br>Piura 20001, Perú</p>
+                            <div class="contact-hours">
+                                <strong>Horario:</strong><br>
+                                Lun - Vie: 8:00 AM - 6:00 PM<br>
+                                Sáb: 8:00 AM - 2:00 PM
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3>Atención al Cliente</h3>
+                            <p><strong>Línea Directa:</strong><br>(073) 456-7890</p>
+                            <p><strong>WhatsApp Corporativo:</strong><br>+51 987 654 321</p>
+                            <p><strong>Email:</strong><br>ventas@cryoicesolutions.com</p>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3>Servicio 24/7</h3>
+                            <p><strong>Emergencias:</strong><br>(073) 456-7899</p>
+                            <p><strong>Distribuición nocturna disponible</strong></p>
+                            <div class="emergency-note">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                Servicio de emergencia para clientes corporativos
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-form-container">
+                        <form class="quote-form" id="quoteForm">
+                            <h3>Solicitar Cotización Empresarial</h3>
+                            
+                            <div class="form-group">
+                                <label for="empresa">Empresa *</label>
+                                <input type="text" id="empresa" name="empresa" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contacto">Persona de contacto *</label>
+                                    <input type="text" id="contacto" name="contacto" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cargo">Cargo</label>
+                                    <input type="text" id="cargo" name="cargo">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email corporativo *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefono">Teléfono *</label>
+                                    <input type="tel" id="telefono" name="telefono" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="producto">Producto de interés *</label>
+                                <select id="producto" name="producto" required>
+                                    <option value="">Seleccionar producto</option>
+                                    <option value="hielo-industrial">Hielo Industrial en Bloques</option>
+                                    <option value="hielo-cubos">Hielo en Cubos Premium</option>
+                                    <option value="hielo-escama">Hielo Escama Marino</option>
+                                    <option value="hielo-decorativo">Hielo Decorativo Premium</option>
+                                    <option value="multiple">Múltiples productos</option>
+                                </select>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cantidad">Cantidad estimada (kg/mes)</label>
+                                    <input type="number" id="cantidad" name="cantidad" min="50">
+                                </div>
+                                <div class="form-group">
+                                    <label for="frecuencia">Frecuencia de entrega</label>
+                                    <select id="frecuencia" name="frecuencia">
+                                        <option value="">Seleccionar</option>
+                                        <option value="diaria">Diaria</option>
+                                        <option value="semanal">Semanal</option>
+                                        <option value="quincenal">Quincenal</option>
+                                        <option value="mensual">Mensual</option>
+                                        <option value="ocasional">Ocasional</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mensaje">Información adicional</label>
+                                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Describa sus necesidades específicas, horarios de entrega preferidos, requisitos especiales, etc."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-paper-plane"></i>
+                                Enviar Cotización
+                            </button>
+
+                            <p class="form-note">
+                                <i class="fas fa-info-circle"></i>
+                                Respuesta garantizada en 24 horas hábiles
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-snowflake"></i>
+                        <span>CryoIce Solutions</span>
+                    </div>
+                    <p>Líder en distribución de hielo industrial con certificaciones internacionales y cobertura nacional.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Productos</h3>
+                    <ul>
+                        <li><a href="#">Hielo Industrial</a></li>
+                        <li><a href="#">Hielo Alimentario</a></li>
+                        <li><a href="#">Hielo Decorativo</a></li>
+                        <li><a href="#">Hielo Escama</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#">Distribución 24/7</a></li>
+                        <li><a href="#">Contratos Corporativos</a></li>
+                        <li><a href="#">Consultoría</a></li>
+                        <li><a href="#">Soporte Técnico</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Certificaciones</h3>
+                    <div class="certifications-footer">
+                        <div class="cert-badge">
+                            <i class="fas fa-certificate"></i>
+                            <span>ISO 22000</span>
+                        </div>
+                        <div class="cert-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>HACCP</span>
+                        </div>
+                        <div class="cert-badge">
+                            <i class="fas fa-award"></i>
+                            <span>DIGESA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 CryoIce Solutions S.A.C. Todos los derechos reservados.</p>
+                    <div class="footer-links">
+                        <a href="#">Términos de Servicio</a>
+                        <a href="#">Política de Privacidad</a>
+                        <a href="#">ISO 22000</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Cotización -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Cotización Rápida</h3>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="quickQuoteForm">
+                    <div class="form-group">
+                        <label for="modalProducto">Producto seleccionado:</label>
+                        <input type="text" id="modalProducto" readonly>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="modalNombre">Nombre completo *</label>
+                            <input type="text" id="modalNombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalTelefono">Teléfono *</label>
+                            <input type="tel" id="modalTelefono" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="modalEmail">Email</label>
+                        <input type="email" id="modalEmail">
+                    </div>
+                    <div class="form-group">
+                        <label for="modalCantidad">Cantidad requerida (kg)</label>
+                        <input type="number" id="modalCantidad" min="1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-whatsapp"></i>
+                        Enviar por WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notification" class="notification">
+        <div class="notification-content">
+            <div class="notification-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="notification-message">
+                <strong>Cotización enviada</strong>
+                <p>Nos contactaremos en las próximas 2 horas</p>
+            </div>
+        </div>
+    </div>
+
+    <style>
+
+        .product-image {
+            padding: 0;
+        }
+
+        .product-icon img {
+            width: 140px;   /* ajusta según tu diseño */
+            height: auto;
+            object-fit: contain; /* mantiene proporción */
+            }
+
+
+        /* Reset y variables CSS */
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #0ea5e9;
+            --accent-color: #10b981;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+            --dark-color: #1f2937;
+            --light-color: #f8fafc;
+            --white: #ffffff;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            
+            --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            
+            --border-radius: 0.5rem;
+            --border-radius-md: 0.75rem;
+            --border-radius-lg: 1rem;
+            --border-radius-xl: 1.5rem;
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: var(--gray-800);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        #productos {
+            padding-top: 50px;
+        }
+
+        #servicios {
+            padding-top: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Loader */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-content {
+            text-align: center;
+            color: var(--white);
+        }
+
+        .ice-loader {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid var(--white);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-200);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .navbar {
+            padding: 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 18px;
+            padding-bottom: 20;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo img {
+            width: 100%;
+            max-width: 80px;
+            height: auto;
+        }
+
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .cta-nav {
+            background: var(--primary-color);
+            color: var(--white) !important;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .cta-nav::after {
+            display: none;
+        }
+
+        .cta-nav:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--gray-700);
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background-image: url("fotos/ft4.jpg"); /* ruta de la imagen */
+            background-repeat: no-repeat;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+        }
+
+        .hero-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, var(--white), transparent),
+                radial-gradient(2px 2px at 40px 70px, var(--white), transparent),
+                radial-gradient(1px 1px at 90px 40px, var(--white), transparent),
+                radial-gradient(1px 1px at 130px 80px, var(--white), transparent),
+                radial-gradient(2px 2px at 160px 30px, var(--white), transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: particles 20s linear infinite;
+        }
+
+        @keyframes particles {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-200px); }
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .title-line {
+            display: block;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-text {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px 20px 20px 20px;
+            border-radius: var(--border-radius-xl);
+        }
+
+        .temperature-display {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: var(--border-radius-xl);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .temp-reading {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .temp-value {
+            color: var(--accent-color);
+        }
+
+        .temp-label {
+            opacity: 0.8;
+        }
+
+        /* Sections */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 6rem 0;
+            background: var(--light-color);
+        }
+
+        .product-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--gray-300);
+            background: var(--white);
+            color: var(--gray-600);
+            border-radius: var(--border-radius-lg);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--border-radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .product-image {
+            position: relative;
+            padding: 26px 0 0 0;
+            background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+            text-align: center;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--border-radius);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .product-icon {
+            font-size: 4rem;
+            color: var(--primary-color);
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .product-content p {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .product-specs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .product-specs span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        .product-specs i {
+            color: var(--accent-color);
+        }
+
+        .product-price {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-from {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .price-unit {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            border-radius: var(--border-radius-xl);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 4rem;
+            height: 4rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border-radius: var(--border-radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--gray-600);
+        }
+
+        .service-features i {
+            color: var(--accent-color);
+            font-size: 0.875rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+            background: var(--gray-50);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-intro {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .certifications h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--gray-200);
+        }
+
+        .cert-item i {
+            color: var(--accent-color);
+        }
+
+        .company-stats {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .company-stat {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .company-stat i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .company-stat .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+
+        .company-stat .stat-label {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.75rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 3px solid var(--white);
+        }
+
+        .timeline-year {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-card {
+            padding: 2rem;
+            background: var(--gray-50);
+            border-radius: var(--border-radius-xl);
+            border: 1px solid var(--gray-200);
+        }
+
+        .contact-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-hours {
+            margin-top: 1rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .emergency-note {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--danger-color);
+            border-radius: var(--border-radius);
+            font-size: 0.875rem;
+        }
+
+        /* Quote Form */
+        .quote-form-container {
+            background: var(--gray-50);
+            border-radius: var(--border-radius-xl);
+            padding: 2rem;
+            border: 1px solid var(--gray-200);
+        }
+
+        .quote-form h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--gray-300);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        .form-note {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+
+        .form-note i {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            color: var(--gray-300);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo i {
+            color: var(--secondary-color);
+        }
+
+        .footer-section p {
+            color: var(--gray-400);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: var(--gray-800);
+            color: var(--gray-400);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .footer-section h3 {
+            color: var(--white);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--white);
+        }
+
+        .certifications-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .cert-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-400);
+        }
+
+        .cert-badge i {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gray-800);
+            padding-top: 2rem;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: var(--border-radius-xl);
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .modal-header h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .modal-close {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-400);
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--gray-600);
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-xl);
+            border-left: 4px solid var(--accent-color);
+            transform: translateX(400px);
+            transition: var(--transition);
+            z-index: 3000;
+            max-width: 400px;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+        }
+
+        .notification-icon {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+            margin-top: 0.125rem;
+        }
+
+        .notification-message strong {
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+
+        .notification-message p {
+            color: var(--gray-600);
+            margin: 0;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 1.75rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .temperature-display {
+                padding: 1.5rem;
+            }
+            
+            .temp-reading {
+                font-size: 3rem;
+            }
+        }
+
+        -content,
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow-lg);
+                border-top: 1px solid var(--gray-200);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .products-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .company-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .hero {
+        text-align: center;
+    }
+}
+
+/* Contacto Profesional */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.contact-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 320px; /* <-- evita que se alarguen demasiado */
+    margin: 0 auto;   /* centra las tarjetas */
+}
+
+/* Hover */
+.contact-card:hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* sombra más marcada */
+}
+
+
+    </style>
+
+    <script>
+        // Page loading
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.classList.add('hidden');
+            }, 1000);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Active navigation link
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Animated counters
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                element.textContent = Math.floor(start);
+                if (start >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                }
+            }, 16);
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    
+                    // Animate counters
+                    if (entry.target.classList.contains('stat-number')) {
+                        const target = parseInt(entry.target.getAttribute('data-count'));
+                        animateCounter(entry.target, target);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.product-card, .service-card, .stat-number, .timeline-item');
+            
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Temperature animation
+        function animateTemperature() {
+            const tempValue = document.getElementById('tempValue');
+            let temp = -92;
+            let direction = 1;
+            
+            setInterval(() => {
+                temp += direction * 0.1;
+                if (temp <= -95 || temp >= -90) {
+                    direction *= -1;
+                }
+                tempValue.textContent = temp.toFixed(1);
+            }, 2000);
+        }
+
+        // Product filters
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    productCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 100);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(30px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+
+        // Quote modal functionality
+        const modal = document.getElementById('quoteModal');
+        const cotizarBtns = document.querySelectorAll('.cotizar-producto');
+        const modalClose = document.querySelector('.modal-close');
+        const modalProducto = document.getElementById('modalProducto');
+
+        cotizarBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const producto = this.getAttribute('data-producto');
+                modalProducto.value = producto;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        modalClose.addEventListener('click', function() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Quote buttons functionality
+        document.getElementById('cotizarBtn').addEventListener('click', function() {
+            document.querySelector('#contacto').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        document.getElementById('verCatalogoBtn').addEventListener('click', function() {
+            document.querySelector('#productos').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Form submissions
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showNotification('Cotización enviada', 'Nos contactaremos en las próximas 24 horas');
+            this.reset();
+        });
+
+        document.getElementById('quickQuoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const producto = document.getElementById('modalProducto').value;
+            const nombre = document.getElementById('modalNombre').value;
+            const telefono = document.getElementById('modalTelefono').value;
+            const cantidad = document.getElementById('modalCantidad').value || 'No especificada';
+            
+            const mensaje = `Hola, solicito cotización para:
+            
+Producto: ${producto}
+Nombre: ${nombre}
+Teléfono: ${telefono}
+Cantidad: ${cantidad} kg
+            
+Gracias.`;
+
+            const whatsappUrl = `https://wa.me/51987654321?text=${encodeURIComponent(mensaje)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            this.reset();
+        });
+
+        // Notification system
+        function showNotification(title, message) {
+            const notification = document.getElementById('notification');
+            const titleEl = notification.querySelector('strong');
+            const messageEl = notification.querySelector('p');
+            
+            titleEl.textContent = title;
+            messageEl.textContent = message;
+            
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 5000);
+        }
+
+        // Particles animation
+        function createParticles() {
+            const particles = document.querySelector('.hero-particles');
+            if (!particles) return;
+
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.cssText = `
+                    position: absolute;
+                    width: 2px;
+                    height: 2px;
+                    background: rgba(255, 255, 255, 0.5);
+                    border-radius: 50%;
+                    left: ${Math.random() * 100}%;
+                    top: ${Math.random() * 100}%;
+                    animation: float ${3 + Math.random() * 4}s infinite ease-in-out;
+                    animation-delay: ${Math.random() * 2}s;
+                `;
+                particles.appendChild(particle);
+            }
+        }
+
+        // Enhanced form validation
+        function validateForm(form) {
+            const inputs = form.querySelectorAll('input[required], select[required]');
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = 'var(--danger-color)';
+                    input.addEventListener('input', function() {
+                        this.style.borderColor = 'var(--gray-300)';
+                    }, { once: true });
+                }
+            });
+
+            return isValid;
+        }
+
+        // Email validation
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        // Phone validation
+        function validatePhone(phone) {
+            const re = /^[\+]?[1-9][\d]{0,15}$/;
+            return re.test(phone.replace(/[\s\-\(\)]/g, ''));
+        }
+
+        // Enhanced quote form validation
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!validateForm(this)) {
+                showNotification('Error', 'Por favor complete todos los campos requeridos');
+                return;
+            }
+
+            const email = document.getElementById('email').value;
+            if (email && !validateEmail(email)) {
+                showNotification('Error', 'Por favor ingrese un email válido');
+                return;
+            }
+
+            const telefono = document.getElementById('telefono').value;
+            if (!validatePhone(telefono)) {
+                showNotification('Error', 'Por favor ingrese un número de teléfono válido');
+                return;
+            }
+
+            // Simulate form submission
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                showNotification('Cotización enviada', 'Nos contactaremos en las próximas 24 horas');
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Lazy loading for images
+        function lazyLoad() {
+            const images = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            animateTemperature();
+            createParticles();
+            lazyLoad();
+            
+            // Add loading animation to buttons
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if (this.type !== 'submit') return;
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.product-card, .service-card, .contact-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+
+        // Performance optimization
+        let ticking = false;
+        function updateOnScroll() {
+            // Update header scroll effect and active navigation
+            const scrollY = window.scrollY;
+            const header = document.getElementById('header');
+            
+            if (scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateOnScroll);
+                ticking = true;
+            }
+        });
+
+        // Error handling
+        window.addEventListener('error', function(e) {
+            console.error('Error:', e.error);
+        });
+
+        // Accessibility improvements
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.querySelector('.modal.active');
+                if (modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        });
+
+        // Focus management for modal
+        const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+        
+        function trapFocus(element) {
+            const focusableContent = element.querySelectorAll(focusableElements);
+            const firstFocusableElement = focusableContent[0];
+            const lastFocusableElement = focusableContent[focusableContent.length - 1];
+
+            element.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    if (e.shiftKey) {
+                        if (document.activeElement === firstFocusableElement) {
+                            lastFocusableElement.focus();
+                            e.preventDefault();
+                        }
+                    } else {
+                        if (document.activeElement === lastFocusableElement) {
+                            firstFocusableElement.focus();
+                            e.preventDefault();
+                        }
+                    }
+                }
+            });
+
+            firstFocusableElement.focus();
+        }
+
+        // Apply focus trap when modal opens
+        const modalElement = document.getElementById('quoteModal');
+        const observer2 = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.attributeName === 'class') {
+                    if (modalElement.classList.contains('active')) {
+                        trapFocus(modalElement);
+                    }
+                }
+            });
+        });
+
+        observer2.observe(modalElement, {
+            attributes: true,
+            attributeFilter: ['class']
+        });
+
+    </script>
+</body>
+</html>
