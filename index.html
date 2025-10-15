@@ -297,9 +297,13 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="container">
                 <div class="about-content">
                     <div class="about-text">
-                        <h2>14 Años Liderando el Mercado</h2>
-                        <p class="about-intro">HIELITO SPRING ICE es la empresa líder en distribución de hielo en toda la región Piura, con una amplia red de clientes que incluye restaurantes, discotecas, licorerías y eventos especiales.
-                         Nuestro compromiso es mantener la cadena de frío y ofrecer hielo de calidad en cada entrega ❄️.</p>
+                        <!-- Tarjeta aniversario adaptada (sin mover el resto) -->
+                        <div class="anniversary-card-inline">
+                            <div class="badge-inline">14 Años</div>
+                            <h2 class="anniversary-title">Liderando el Mercado</h2>
+                            <p class="about-intro"> <span class="highlight-inline">HIELITO SPRING ICE</span> es la empresa líder en distribución de hielo en toda la región Piura, con una amplia red de clientes que incluye restaurantes, discotecas, licorerías y eventos especiales. Nuestro compromiso es mantener la cadena de frío y ofrecer hielo de calidad en cada entrega <span class="emoji-inline">❄️😊</span>.</p>
+
+                        
                         
                         <div class="certifications">
                             <h3>Certificaciones y Garantías</h3>
@@ -319,6 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <div class="cert-item">
                                     <i class="fas fa-award"></i>
                                     <span>DIGESA</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -2002,8 +2007,84 @@ document.addEventListener("DOMContentLoaded", () => {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* sombra más marcada */
 }
+ </style>
+ <style>
+    /* Estilos adaptados para la tarjeta aniversario embebida (scope reducido) */
+    .anniversary-card-inline {
+        background: #d4dde7; /* fondo claro para contraste con página blanca */
+        border-radius: 12px;
+        padding: 20px 20px 22px 20px;
+        margin-bottom: 1rem;
+        position: relative;
+        border: 1px solid rgba(30,64,175,0.08);
+        overflow: visible;
+        box-shadow: 0 10px 30px rgba(2,44,67,0.06);
+        transform-origin: center;
+        z-index: 2;
+        color: var(--gray-900);
+    }
 
+    .badge-inline {
+        position: absolute;
+        top: -14px;
+        right: 16px;
+        background: linear-gradient(45deg,#ff9a00,#ff6a00);
+        color: #fff;
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        box-shadow: 0 8px 22px rgba(255,106,0,0.18);
+        transform: rotate(5deg);
+        will-change: transform, box-shadow;
+        animation: badgePulse 3s ease-in-out infinite;
+    }
 
+    .anniversary-title { color: var(--primary-color); margin: 0 0 8px; font-size: 1.6rem; }
+    .highlight-inline { font-weight:700; color: var(--primary-color); }
+    .emoji-inline { font-size: 1.1rem; }
+
+    /* Aparición elegante: transform (no depender de opacity) */
+    .anniversary-card-inline { transform: translateY(6px) scale(.998); }
+    .about-text .anniversary-card-inline { animation: cardEntrance 700ms cubic-bezier(.2,.9,.3,1) forwards; }
+
+    @keyframes cardEntrance {
+        0% { transform: translateY(18px) scale(.985); filter: blur(2px); }
+        60% { transform: translateY(-6px) scale(1.01); filter: blur(0.2px); }
+        100% { transform: translateY(0) scale(1); filter: none; }
+    }
+
+    @keyframes badgePulse {
+        0% { transform: rotate(5deg) translateY(0); box-shadow: 0 8px 22px rgba(255,106,0,0.18); }
+        50% { transform: rotate(5deg) translateY(-3px) scale(1.03); box-shadow: 0 18px 32px rgba(255,106,0,0.22); }
+        100% { transform: rotate(5deg) translateY(0) scale(1); box-shadow: 0 8px 22px rgba(255,106,0,0.18); }
+    }
+
+    /* Sutil brillo interno al pasar el mouse */
+    .anniversary-card-inline::after {
+        content: '';
+        position: absolute;
+        top: -40%;
+        left: -30%;
+        width: 60%;
+        height: 200%;
+        background: linear-gradient(120deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.14) 50%, rgba(255,255,255,0.06) 100%);
+        transform: translateX(-100%) rotate(-15deg);
+        transition: transform 1s cubic-bezier(.2,.9,.3,1);
+        pointer-events: none;
+    }
+
+    .anniversary-card-inline:hover::after { transform: translateX(30%) rotate(-15deg); }
+
+    /* Asegurar legibilidad del párrafo */
+    .about-text .about-intro { color: var(--gray-700); }
+
+    /* Respectar preferencia de reducción de movimiento */
+    @media (prefers-reduced-motion: reduce) {
+        .about-text .anniversary-card-inline,
+        .badge-inline { animation: none !important; transition: none !important; }
+        .anniversary-card-inline::after { transition: none !important; }
+    }
     </style>
 
     <script>
