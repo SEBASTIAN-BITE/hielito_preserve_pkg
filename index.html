@@ -2120,19 +2120,38 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        // Temperature animation
+        // Temperature animation (inicia en -20°C y cambia de vez en cuando)
         function animateTemperature() {
             const tempValue = document.getElementById('tempValue');
-            let temp = -92;
-            let direction = 1;
-            
-            setInterval(() => {
-                temp += direction * 0.1;
-                if (temp <= -95 || temp >= -90) {
-                    direction *= -1;
-                }
-                tempValue.textContent = temp.toFixed(1);
-            }, 2000);
+            let temp = -20.0;
+            tempValue.textContent = temp.toFixed(1);
+
+            let animInterval = null;
+
+            function setRandomTarget() {
+                // Objetivo entre -22 y -18 (variaciones pequeñas)
+                const target = -20 + (Math.random() * 4 - 2);
+                const duration = 2000 + Math.random() * 4000; // entre 2s y 6s
+                const steps = Math.max(10, Math.floor(duration / 100));
+                const stepSize = (target - temp) / steps;
+                let currentStep = 0;
+
+                if (animInterval) clearInterval(animInterval);
+                animInterval = setInterval(() => {
+                    temp += stepSize;
+                    currentStep++;
+                    tempValue.textContent = temp.toFixed(1);
+                    if (currentStep >= steps) {
+                        clearInterval(animInterval);
+                        animInterval = null;
+                        // programar próxima variación tras una pausa aleatoria
+                        setTimeout(setRandomTarget, 3000 + Math.random() * 5000);
+                    }
+                }, 100);
+            }
+
+            // iniciar la primera variación después de un breve retardo
+            setTimeout(setRandomTarget, 1500 + Math.random() * 2000);
         }
 
         // Product filters
